@@ -1,5 +1,7 @@
 # TweenService-Plus
 
+**NOTE:** [rek_kie](https://devforum.roblox.com/u/rek_kie) is the original owner of this library!
+
 Introducing **TweenService+**, a module that is focused solely on server and client tween replication! It lets you play tweens on the server, without them actually being on the server. It tells the clients to play that tween, and then sets the properties of the object instantly on the server once the tween time is finished.
 
 ## “Can’t I just use TweenService V2? What’s the point of this?”
@@ -25,14 +27,14 @@ For example (without a specified threshold):
 If the server told a client to do a 10 second tween and it took .7 seconds to get to the client, then the time for the client’s tween would be 10 - .7 = 9.3 seconds. I’m using @Quenty’s **TimeSyncManager module** to get a global timestamp, so that server and client time are synced. This results in a perfect sync between client and server tween completion. To better see this for yourself, **turn on debug mode** and look at the output to see how the server prints exactly when the client tween ends. (If you are in Studio, Make sure you stay watching only on the client though, because switching to the server view pauses the client’s game session on Play Solo, at least for me.)
 
 Another visual example:
-![image|640x478](https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/7/1/c/71cfe3a375bef79aea6441a0238f419a0f836e2f.png)
+<br>![image|640x478](https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/7/1/c/71cfe3a375bef79aea6441a0238f419a0f836e2f.png)
 
 Now, for example, let’s say we set a **threshold** for latency compensation **(defaults to 0)**. What this means is that if the new tween time after calculating latency isn’t greater than the threshold, then the tween won’t play for that client. **If I set a threshold of 2 seconds with latency compensation enabled, let’s think of this:**
 
 The server tells the client to do a 5 second tween. _The client has very high ping_, so it takes a while for the client to receive the server request. The request finally gets to the client, and it took 3.7 seconds. With latency compensation, the client’s new tween time would be 5 - 3.7 = **1.3 seconds.** This is less than the 2 second threshold we set, **so the tween will not play for that client.**
 
 Another visual example:
-![image|641x446](https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/4/d/7/4d740538e0d539d96e7d202cf6eb55c98a6df541.png)
+<br>![image|641x446](https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/4/d/7/4d740538e0d539d96e7d202cf6eb55c98a6df541.png)
 
 ## Tween Ranges
 
@@ -49,8 +51,7 @@ You can also specify the **rootPart** of the player to calculate the distance fr
 `mainObject:` The object to calculate distance from if you are using :Play() with a range. Defaults to the original object you’re trying to tween. This is useful if you are trying to tween something that isn’t a BasePart, but you still need to calculate distance from something to tween the object. (Ex. You want to tween a pointlight and use a range of 50 studs, but a pointlight doesn’t have a workspace position. So, you can set the mainObject to a BasePart and then the range would be 50 studs within that part.)
 
 Visual:
-
-![image](https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/d/0/d/d0d234399707b6ca35892764689fbbc6ed9c1b88.png)
+<br>![image](https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/d/0/d/d0d234399707b6ca35892764689fbbc6ed9c1b88.png)
 
 ## How do I use it?
 
