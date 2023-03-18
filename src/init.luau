@@ -176,7 +176,7 @@ function tweenService:Construct(
 	local startProperties = {}
 
 	if info.Reverses then
-		for property, value in pairs(properties) do
+		for property, _ in pairs(properties) do
 			startProperties[property] = (obj :: any)[property]
 		end
 	end
