@@ -1,0 +1,10 @@
+[package]
+name = "xhayper/TweenService-Plus"
+description = "a module that is focused solely on server and client tween replication!"
+version = "1.2"
+license = "UNLICENSE"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+include = ["src", "default.project.json"]
+
+[dependencies]

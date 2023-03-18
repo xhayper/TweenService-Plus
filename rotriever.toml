@@ -1,0 +1,8 @@
+[package]
+name = "xhayper/roblox-luau-type-utility"
+version = "1.2"
+author = "xhayper"
+content_root = "src"
+license = "UNLICENSE"
+
+[dependencies]
