@@ -143,6 +143,17 @@ local function assign(object: Instance, properties: { [string]: any }, debugMode
 	end
 end
 
+function tweenService:Create(
+	obj: Instance,
+	info: TweenInfo,
+	properties: { [string]: any },
+	timeThreshold: number?,
+	debugMode: boolean?,
+	clientSync: boolean?
+)
+	return tweenService:Construct(obj, info, properties, timeThreshold, debugMode, clientSync)
+end
+
 function tweenService:Construct(
 	obj: Instance,
 	info: TweenInfo,
